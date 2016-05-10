@@ -1,0 +1,6 @@
+pip
+django
+djangorestframework
+markdown
+django-crispy-forms
+psycopg2
