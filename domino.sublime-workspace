@@ -1,0 +1,636 @@
+{
+	"auto_complete":
+	{
+		"selected_items":
+		[
+		]
+	},
+	"buffers":
+	[
+	],
+	"build_system": "Anaconda Python Builder",
+	"build_system_choices":
+	[
+		[
+			[
+				[
+					"Anaconda Python Builder",
+					""
+				],
+				[
+					"Packages/Python/Python.sublime-build",
+					""
+				],
+				[
+					"Packages/Python/Python.sublime-build",
+					"Syntax Check"
+				]
+			],
+			[
+				"Anaconda Python Builder",
+				""
+			]
+		]
+	],
+	"build_varint": "",
+	"command_palette":
+	{
+		"height": 392.0,
+		"last_filter": ":w",
+		"selected_items":
+		[
+			[
+				":w",
+				":w - Save"
+			],
+			[
+				":q",
+				"Set Syntax: SQL"
+			],
+			[
+				"insta",
+				"Package Control: Install Package"
+			],
+			[
+				"install",
+				"Package Control: Install Package"
+			],
+			[
+				"rem",
+				"Package Control: Remove Package"
+			],
+			[
+				"remo",
+				"Package Control: Remove Package"
+			],
+			[
+				"instal",
+				"Package Control: Install Package"
+			],
+			[
+				":",
+				":w - Save"
+			],
+			[
+				"remove",
+				"Package Control: Remove Package"
+			],
+			[
+				":1",
+				"Emmet: Decrement Number by 1"
+			],
+			[
+				":wq",
+				"Pretty JSON: JSON query with ./jq"
+			],
+			[
+				"",
+				":w - Save"
+			],
+			[
+				"git",
+				"GitGutter: Show Comparing Against"
+			],
+			[
+				"JSON",
+				"JsonTree: Show Tree"
+			],
+			[
+				"tree",
+				"JsonTree: Show Tree"
+			],
+			[
+				"forma",
+				"Pretty JSON: Format (Pretty Print) JSON"
+			],
+			[
+				"pack",
+				"Package Control: Install Local Dependency"
+			],
+			[
+				"Package Control: ",
+				"Package Control: Install Package"
+			],
+			[
+				"package",
+				"Package Control: Install Package"
+			],
+			[
+				"pak",
+				"Preferences: Package Control Settings – User"
+			],
+			[
+				"user",
+				"Preferences: Settings - User"
+			],
+			[
+				"pakac",
+				"Package Control: Remove Repository"
+			],
+			[
+				"pacak",
+				"Package Control: Remove Repository"
+			],
+			[
+				"packa",
+				"Package Control: List Unmanaged Packages"
+			],
+			[
+				"list pa",
+				"Package Control: List Packages"
+			],
+			[
+				"settings",
+				"Preferences: Settings - User"
+			],
+			[
+				"bropw",
+				"Preferences: Browse Packages"
+			],
+			[
+				"paka",
+				"Package Control: Discover Packages"
+			],
+			[
+				"brow",
+				"Preferences: Browse Packages"
+			],
+			[
+				"update",
+				"Package Control: Upgrade/Overwrite All Packages"
+			],
+			[
+				"repo",
+				"Package Control: Add Repository"
+			],
+			[
+				"pac",
+				"Package Control: Upgrade Package"
+			],
+			[
+				"paclk",
+				"Package Control: Install Package"
+			],
+			[
+				"Packa",
+				"Package Control: Install Package"
+			],
+			[
+				":clo",
+				"File: Close All"
+			]
+		],
+		"width": 485.0
+	},
+	"console":
+	{
+		"height": 218.0,
+		"history":
+		[
+			"import urllib.request,os,hashlib; h = 'eb2297e1a458f27d836c04bb0cbaf282' + 'd0e7a3098092775ccb37ca9d6b2e4b7d'; pf = 'Package Control.sublime-package'; ipp = sublime.installed_packages_path(); urllib.request.install_opener( urllib.request.build_opener( urllib.request.ProxyHandler()) ); by = urllib.request.urlopen( 'http://packagecontrol.io/' + pf.replace(' ', '%20')).read(); dh = hashlib.sha256(by).hexdigest(); print('Error validating download (got %s instead of %s), please try manual install' % (dh, h)) if dh != h else open(os.path.join( ipp, pf), 'wb' ).write(by)"
+		]
+	},
+	"distraction_free":
+	{
+		"menu_visible": true,
+		"show_minimap": false,
+		"show_open_files": false,
+		"show_tabs": false,
+		"side_bar_visible": false,
+		"status_bar_visible": false
+	},
+	"expanded_folders":
+	[
+		"/home/kristian/dev/domino"
+	],
+	"file_history":
+	[
+		"/home/kristian/Work/ht/valutazioni/2016/luigi-cases.txt",
+		"/home/kristian/Work/ht/valutazioni/2016/luigi.txt",
+		"/home/kristian/Work/mumed/migrazione-2016/db/bulk-insert-after-impdp-WH_INT-ACCESSI_TESTATA.sql",
+		"/home/kristian/Work/mumed/migrazione-2016/db/post-import-updates.sql",
+		"/home/kristian/Work/mumed/migrazione-2016/db/invalid-objects/wh_cup-VW_TEMPI_ATTESA_CRUSCOTTO.sql",
+		"/home/kristian/sandbox/automation/Clienti/CARLO/install-pubkey-authentication-carlo.yml",
+		"/home/kristian/Work/mumed/migrazione-2016/as/stop-services.yml",
+		"/home/kristian/sandbox/automation/Clienti/MUMED/mumed-restart-cupweb.yml",
+		"/home/kristian/Work/polic/migrazione-2016/db/install-oracle-12c-on-oel71.yml",
+		"/home/kristian/Work/polic/migrazione-2016/partizionamenti-sciupati.txt",
+		"/home/kristian/Work/mumed/migrazione-2016/integrazioni-esistenti.txt",
+		"/home/kristian/Work/mumed/20101007-query-da-ottimizzare.txt",
+		"/home/kristian/Work/mumed/migrazione-2016/db/utenze-da-migrare.txt",
+		"/home/kristian/Work/mumed/migrazione-2016/db/dropped-database-links.sql",
+		"/home/kristian/Work/mumed/migrazione-2016/db/impdp.log.20160907183719",
+		"/home/kristian/Work/mumed/migrazione-2016/db/expdp.par",
+		"/home/kristian/Work/mumed/migrazione-2016/db/disable_case_sensitive_passwords.sql",
+		"/home/kristian/Work/mumed/migrazione-2016/db/impdp_hi10.log",
+		"/home/kristian/Work/mumed/20160301-indagine-blocchi-cupweb.txt",
+		"/home/kristian/Work/mumed/20160914-revisione-gufo-luigi.txt",
+		"/home/kristian/Work/mumed/migrazione-2016/db/indagine-db-prod.sql",
+		"/home/kristian/Work/mumed/migrazione-2016/db/impdp.log",
+		"/home/kristian/.config/sublime-text-3/Packages/User/ZenTabs.sublime-settings",
+		"/home/kristian/.config/sublime-text-3/Packages/User/Pylinter.sublime-settings",
+		"/home/kristian/Work/mumed/migrazione-2016/db/indagine-tabelle-non-importate.sql",
+		"/home/kristian/Work/mumed/migrazione-2016/db/dblinks.ods",
+		"/home/kristian/.config/sublime-text-3/Packages/User/Preferences.sublime-settings",
+		"/home/kristian/Work/mumed/migrazione-2016/db/bulk-insert-after-impdp.sql",
+		"/home/kristian/Work/mumed/migrazione-2016/db/invalid-objects/wh_ps-RIGHE_PS.sql",
+		"/home/kristian/Work/mumed/migrazione-2016/db/tnsnames.ora-test",
+		"/home/kristian/Work/mumed/migrazione-2016/db/tnsnames.ora-crispino",
+		"/home/kristian/Work/mumed/migrazione-2016/db/tnsnames.ora-prod",
+		"/home/kristian/Work/polic/migrazione-2016/appunti.txt",
+		"/home/kristian/Work/polic/migrazione-2016/opensmtpd-conf.txt",
+		"/home/kristian/Work/nigu/20160919-sessioni-bloccate-partenza-cupweb.txt",
+		"/home/kristian/dev/companion/start-vpn.py",
+		"/home/kristian/dev/companion/companion.sublime-project",
+		"/home/kristian/dev/companion/.anaconda",
+		"/home/kristian/Work/mumed/migrazione-2016/appunti.txt",
+		"/home/kristian/dev/a/docker-compose.yml",
+		"/home/kristian/dev/a/Dockefile",
+		"/home/kristian/dev/a/common.env",
+		"/home/kristian/Work/legna/20160914-revisione-gufo-luigi.txt",
+		"/home/kristian/dev/a/conf/legna.conf",
+		"/home/kristian/Work/nigu/migrazione-ACC-2013/MASTER-PLAN.TXT",
+		"/home/kristian/sandbox/dbatools/modules/OraDB.py",
+		"/home/kristian/.config/sublime-text-3/Packages/User/Anaconda.sublime-settings",
+		"/home/kristian/.config/sublime-text-3/Packages/User/SublimeLinter.sublime-settings",
+		"/home/kristian/Work/nigu/dba/tables/BDA3-FLUSSO_28SAN_LOMBARDIA_1.sql",
+		"/home/kristian/Work/nigu/dba/tables/CUP3-PREN_TESTA.sql",
+		"/home/kristian/sandbox/ci/usr/share/jenkins/ref/plugins.txt",
+		"/home/kristian/sandbox/ci/usr/local/bin/plugins.txt",
+		"/home/kristian/sandbox/htadmin/Services/CI/jenkins-sonarqube-as-staging.txt",
+		"/home/kristian/sandbox/ci/log.properties",
+		"/home/kristian/Work/verc/20160912-blocco-wbmd.txt",
+		"/home/kristian/Work/polic/migrazione-2016/applicativi-coinvolti.txt",
+		"/home/kristian/Work/mumed/migrazione-2016/db/tnsnames.ora",
+		"/home/kristian/sandbox/htadmin/Clienti/nigu/doc/intranet.txt",
+		"/home/kristian/sandbox/htadmin/Clienti/don/doc/intranet.txt",
+		"/home/kristian/sandbox/htadmin/Clienti/mumed/doc/intranet.txt",
+		"/home/kristian/sandbox/database/sql/base/0000000110.sql",
+		"/home/kristian/Work/ht/20160127-nuovo-nas.txt",
+		"/home/kristian/Work/ht/db/guidelines.txt",
+		"/home/kristian/Work/ht/db/20160728-riunione-dbas.txt",
+		"/home/kristian/Work/mumed/migrazione-2016/db/tnsnames.ora-old",
+		"/home/kristian/Work/ht/spam/get-ips-to-ban.py",
+		"/home/kristian/Work/mumed/migrazione-2016/db/abilitare_connessione_sysdba_via_sqlnet.txt",
+		"/home/kristian/Work/polic/20160906/acceweb-produzione-query-estremamente-pesante.sql",
+		"/home/kristian/Work/mumed/20160727-migrazione-galileo-people.txt",
+		"/home/kristian/Work/ht/spam/email.eml",
+		"/home/kristian/.config/sublime-text-3/Packages/User/SublimeCodeIntel.sublime-settings",
+		"/home/kristian/Work/polic/migrazione-2016/nuovi-server-e-indirizzi-ip.txt",
+		"/home/kristian/sandbox/htadmin/Clienti/Install/database-server-specs.txt",
+		"/tmp/query-ServerMessaggistica-pesanti.sql",
+		"/home/kristian/Work/mumed/migrazione-2016/specifiche-per as-e-db-server.txt",
+		"/home/kristian/sandbox/htadmin/Services/Clustering/pacemaker/install-pacemaker-corosync-heartbeat-on-oel-5.4-64bit.txt",
+		"/home/kristian/Work/polic/20160830-polic_errori_psnet_produzione.txt",
+		"/home/kristian/sandbox/htadmin/Services/Clustering/pacemaker/yum-pacemaker.repo",
+		"/home/kristian/Work/mumed/migrazione-2016/problemi-da-risolvere.txt",
+		"/home/kristian/sandbox/htadmin/Intranet/Security/certs/hitech-sanita.it/README.txt",
+		"/home/kristian/sandbox/htadmin/Intranet/Security/certs/hitech-sanita.it/istruzioni.txt",
+		"/home/kristian/Work/nigu/201608XX-rallentamento.txt",
+		"/home/kristian/Work/nigu/ldap/gruppi-applicativi.txt",
+		"/home/kristian/Work/ht/db/applicazione-ddl-dml-impattanti.txt",
+		"/mnt/sda3/Work/lispa/carlo/imp-std_bda_gp.par",
+		"/mnt/sda3/Work/lispa/carlo/imp-si.par",
+		"/mnt/sda3/Work/lispa/carlo/imp-std_int_gp.par",
+		"/mnt/sda3/Work/lispa/carlo/imp-std_cupc_gp.par",
+		"/tmp/email.eml",
+		"/home/kristian/Work/verc/migrazione-2016/appunti.txt",
+		"/home/kristian/Work/nigu/20160719-upgrade-hardware/scaletta-per-elisa.txt",
+		"/home/kristian/Work/nov/20160728-create-wh_cce/mancanti WH_CCE.sql",
+		"/home/kristian/Templates/NIGU-incident-report.txt",
+		"/home/kristian/Work/nigu/migrazione-ACC-2016/upgradehw/hitech1-ram-info.txt",
+		"/home/kristian/Work/nigu/20160719-upgrade-hardware/appunti.txt",
+		"/home/kristian/Work/nigu/NIGC-password/intervento/TODO.txt",
+		"/home/kristian/Work/nigu/NIGC-password/appunti.txt",
+		"/home/kristian/sandbox/htadmin/Services/Clustering/pacemaker/add_new_ip_addresses_to_htbalancer.txt",
+		"/home/kristian/sandbox/dbatools/doc/suggerimenti-lottini-per-velocizzare-dataload.txt",
+		"/home/kristian/Work/nigu/migrazione-ACC-2016/appunti.txt",
+		"/home/kristian/Work/matteo/appunti.md",
+		"/home/kristian/Work/legna/migrazione-cupweb/email-per-caielli.txt",
+		"/home/kristian/Work/nigu/20160726-lpweb-hitech2-errori.txt",
+		"/home/kristian/Work/polic/20160726-graves-acceweb.txt",
+		"/home/kristian/Work/polic/20160722-proc-appesi-psdbnode2.txt",
+		"/home/kristian/Work/polic/migrazione-2016/specifiche-per-nuovo-cluster-oracle-12c-rac.txt",
+		"/home/kristian/Work/nigu/20160708-user-QPRC-hungry-select.txt",
+		"/mnt/sda3/sandbox/demo-san-matteo/db/impdp-sis.par",
+		"/mnt/sda3/sandbox/demo-san-matteo/db/impdp-cupv.par",
+		"/mnt/sda3/sandbox/demo-san-matteo/db/impdp-cup.par",
+		"/home/kristian/Work/mumed/20160705-deadlocks/appunti.txt",
+		"/home/kristian/Work/nigu/NIGC-password/intervento/hitech1-nigc-bin-files.txt",
+		"/home/kristian/Work/nigu/NIGC-password/intervento/hitech1-nigc-txt-files.txt",
+		"/home/kristian/Work/nigu/NIGC-password/intervento/hitech1-nigc-files.txt",
+		"/tmp/preview.txt",
+		"/home/kristian/Work/raf/migrazione-2016/appunti.txt",
+		"/home/kristian/Work/raf/sostituzione-storage/mente-locale.txt",
+		"/doc/Clienti/Multimedica/2016/Analisi/MigrazioneServer/appunti.txt",
+		"/doc/Clienti/Multimedica/2016/analisi/MigrazioneServer/Ambiente di test e collaudo:.txt",
+		"/home/kristian/Work/polic/migrazione-2016/20160219-conference.txt",
+		"/home/kristian/Work/nigu/migrazione-ACC-2016/TODO.txt",
+		"/home/kristian/Work/nigu/migrazione-AD-2012/terza-volta/tcpdump.txt",
+		"/home/kristian/Work/nigu/serverfarm-li/transazioni-http-cupweb-piu-pesanti.txt",
+		"/home/kristian/Work/nigu/serverfarm-li/indirizzi-ip-unici-accesso-cupnet-produzione.txt",
+		"/home/kristian/Work/nigu/migrazione-ACC-2016/accnew/datapump/appunti.txt",
+		"/home/kristian/Work/nigu/migrazione-ACC-2016/accnew/datapump/impdp-accnew.par",
+		"/home/kristian/Work/nigu/migrazione-ACC-2016/accnew/datapump/expdp-accnew.par",
+		"/home/kristian/Work/raf/sostituzione-storage/tempistiche.txt"
+	],
+	"find":
+	{
+		"height": 37.0
+	},
+	"find_in_files":
+	{
+		"height": 118.0,
+		"where_history":
+		[
+			"/home/kristian/sandbox/database/sql",
+			"/home/kristian/sandbox/database/sql/features/LOMBARDIA",
+			"/home/kristian/sandbox/database/sql/features/GP",
+			"/home/kristian/sandbox/database/sql",
+			"/home/kristian/sandbox/database",
+			"/home/kristian/sandbox/database/sql",
+			"/home/kristian/Work/breno/migrazione-2016",
+			"/home/kristian/sandbox/database/sql",
+			"/home/kristian/sandbox/migrazioni.cupnet_cupweb",
+			"/home/kristian/sandbox/database/sql",
+			"/home/kristian/sandbox/dbatools",
+			"/home/kristian/sandbox/database/sql",
+			"/home/kristian/sandbox/migrazioni.cupnet_cupweb",
+			"/home/kristian/sandbox/database/sql",
+			"/home/kristian/sandbox/migrazioni.cupnet_cupweb",
+			"/mnt/sda3/sandbox/consenso/app",
+			"/home/kristian/sandbox/migrazioni.cupnet_cupweb/SCRIPT_ADATTAMENTO",
+			"/home/kristian/sandbox/database/sql",
+			"/home/kristian/sandbox/database/sql/base",
+			"/home/kristian/sandbox/database/sql",
+			"/home/kristian/Work/breno/migrazione-2016",
+			"/home/kristian/sandbox/database/sql",
+			"/home/kristian/sandbox/database"
+		]
+	},
+	"find_state":
+	{
+		"case_sensitive": false,
+		"find_history":
+		[
+			"@hi10 ",
+			"ddl",
+			"space",
+			"^[0-9]",
+			"<version>",
+			"^[0-9]*",
+			"\\n[0-9]^*",
+			"\\n[0-9]*",
+			"<version>",
+			"</version>",
+			"</shortName>",
+			"<shortName>",
+			"\\n[0-9]",
+			"\\n[0-9]*",
+			"<version>",
+			"</version>",
+			"</shortName>",
+			"<shortName>",
+			"dashbo",
+			"folders",
+			"folder",
+			"\\n[0-9]",
+			"font",
+			"ban_list",
+			"blacklist",
+			"ban_list",
+			"whitelisted_networks",
+			"ban_list",
+			"received_lists",
+			"pattern",
+			"root",
+			"\\.mumed",
+			"KRISTIAN",
+			"ELISA",
+			"KRISTIAN",
+			"-",
+			"KRISTIAN",
+			"(",
+			"-",
+			",",
+			"\\?",
+			"cupv",
+			"_GP2",
+			"AMB",
+			"AMB_",
+			"20",
+			"PROVA",
+			"^PREN",
+			" ",
+			"id_sequenza_righe",
+			"idx_accrighe_id_seq_righe",
+			"TRIGGER",
+			"PRIMAR",
+			"EROGATORI",
+			"TIPI_ERRORE_GP2",
+			"TRG_TIPI_ERRORE_GP2",
+			"SEQ_TIPI_ERRORE_GP2",
+			"SEQ_FRASI_TIPO",
+			"DISTRETTI_TERRITORIALI",
+			"DISTRETTI",
+			"WH_CUP.FARMACI",
+			"FARMACI",
+			"TRG_ID_REPARTI",
+			"TRG_SEQ_ID_INTERVENTI",
+			"TRG_SEQ_ID_DIAGNOSI",
+			"GETINDIRIZZOSEMPLICE",
+			"GETCIVICO",
+			"TRG_CARTELLE",
+			"WH_CCE",
+			"CCE",
+			"CARTELLE",
+			"FORMATTA_NOMI",
+			"PREN_TESTA",
+			"IUP",
+			"RUOLO_OPER_GP",
+			"GP",
+			"PREN_RIGHE",
+			"COMUNI",
+			"ACCESSI_RIGHE",
+			"NUM1_TEL",
+			"NUM_TEL",
+			"ANA_PAZ",
+			"SEQ_ID_PAZ",
+			"QUESITO",
+			"COD_OPER_",
+			"default.*$",
+			"dep",
+			"GRANTS",
+			"OSLO",
+			"CONSENSO_730",
+			"UTENTI_EROG",
+			"COD_DISTRETTO",
+			"model",
+			"default",
+			"consenso_tbs",
+			"consenso_idx",
+			"grant",
+			"FATTURE_TESTA",
+			"SEQ_FRASI_TIPO",
+			"TABLESPACE",
+			"TRG_DATA_INDICE_ESTR_28SAN",
+			"ERRORS_DETAILS",
+			"DISTRETTI_TERRITORIALI",
+			"FARMACI",
+			"PCT",
+			"CREATE",
+			"dbms",
+			"PRODOTTI_PROTESI",
+			"\"TESTATA\"",
+			"GETHTMLDESCRPRESTAZIONINOTE",
+			"DIPARTIMENTI",
+			",",
+			"ERRORS",
+			"SEQ_ID_EROGATORI",
+			"SEQ_IDRICHIESTA",
+			"SEQ_IDRICHIESTA_16",
+			"FORMATTA_NOMI",
+			"TRG_ID_DIAGNOSI",
+			"MENUUTE",
+			"sto_",
+			"SEQ_ID_PAZ",
+			"GETCIVICO",
+			"FLUSSO_",
+			"FLUSSO_REG",
+			"TRG_ID_DIA",
+			"DATA_INIZIO_VAL",
+			"DATAJ_FINE_VALIDITA_STP",
+			"sja"
+		],
+		"highlight": true,
+		"in_selection": false,
+		"preserve_case": false,
+		"regex": true,
+		"replace_history":
+		[
+			" ",
+			"",
+			"cup",
+			"",
+			"CCE",
+			"public",
+			"",
+			"\n",
+			"",
+			"consenso",
+			"ZABBIX",
+			"developer del caso",
+			"",
+			"CREATE OR REPLACE SEQUENCE",
+			",",
+			"CUPC"
+		],
+		"reverse": false,
+		"show_context": true,
+		"use_buffer2": true,
+		"whole_word": false,
+		"wrap": false
+	},
+	"groups":
+	[
+		{
+			"sheets":
+			[
+			]
+		}
+	],
+	"incremental_find":
+	{
+		"height": 29.0
+	},
+	"input":
+	{
+		"height": 41.0
+	},
+	"layout":
+	{
+		"cells":
+		[
+			[
+				0,
+				0,
+				1,
+				1
+			]
+		],
+		"cols":
+		[
+			0.0,
+			1.0
+		],
+		"rows":
+		[
+			0.0,
+			1.0
+		]
+	},
+	"menu_visible": true,
+	"output.exec":
+	{
+		"height": 259.0
+	},
+	"output.find_results":
+	{
+		"height": 0.0
+	},
+	"output.markdown":
+	{
+		"height": 146.0
+	},
+	"pinned_build_system": "",
+	"project": "domino.sublime-project",
+	"replace":
+	{
+		"height": 68.0
+	},
+	"save_all_on_build": true,
+	"select_file":
+	{
+		"height": 0.0,
+		"last_filter": "",
+		"selected_items":
+		[
+		],
+		"width": 0.0
+	},
+	"select_project":
+	{
+		"height": 500.0,
+		"last_filter": "",
+		"selected_items":
+		[
+			[
+				"",
+				"~/dev/a/companion.sublime-workspace"
+			]
+		],
+		"width": 380.0
+	},
+	"select_symbol":
+	{
+		"height": 0.0,
+		"last_filter": "",
+		"selected_items":
+		[
+		],
+		"width": 0.0
+	},
+	"selected_group": 0,
+	"settings":
+	{
+	},
+	"show_minimap": false,
+	"show_open_files": true,
+	"show_tabs": true,
+	"side_bar_visible": true,
+	"side_bar_width": 331.0,
+	"status_bar_visible": true,
+	"template_settings":
+	{
+	}
+}
