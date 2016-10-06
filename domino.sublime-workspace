@@ -48,11 +48,19 @@
 				"Set Syntax: SQL"
 			],
 			[
-				"insta",
-				"Package Control: Install Package"
+				"anaconda",
+				"Anaconda: Run Project Tests"
 			],
 			[
 				"install",
+				"Package Control: Install Package"
+			],
+			[
+				"packe",
+				"Package Control: Install Package"
+			],
+			[
+				"insta",
 				"Package Control: Install Package"
 			],
 			[
@@ -201,10 +209,20 @@
 	},
 	"expanded_folders":
 	[
-		"/home/kristian/dev/domino"
+		"/home/kristian/dev/domino",
+		"/home/kristian/dev/domino/app",
+		"/home/kristian/dev/domino/app/app",
+		"/home/kristian/dev/domino/app/servers"
 	],
 	"file_history":
 	[
+		"/home/kristian/dev/domino/app/servers/models.py",
+		"/home/kristian/dev/domino/docker-compose.yml",
+		"/home/kristian/.config/sublime-text-3/Packages/Anaconda/Anaconda.sublime-settings",
+		"/home/kristian/.config/sublime-text-3/Packages/User/Anaconda.sublime-settings",
+		"/home/kristian/.config/sublime-text-3/Packages/User/Python.sublime-settings",
+		"/home/kristian/dev/domino/app/requirements.txt",
+		"/home/kristian/Work/polic/migrazione-2016/appunti.txt",
 		"/home/kristian/Work/ht/valutazioni/2016/luigi-cases.txt",
 		"/home/kristian/Work/ht/valutazioni/2016/luigi.txt",
 		"/home/kristian/Work/mumed/migrazione-2016/db/bulk-insert-after-impdp-WH_INT-ACCESSI_TESTATA.sql",
@@ -237,7 +255,6 @@
 		"/home/kristian/Work/mumed/migrazione-2016/db/tnsnames.ora-test",
 		"/home/kristian/Work/mumed/migrazione-2016/db/tnsnames.ora-crispino",
 		"/home/kristian/Work/mumed/migrazione-2016/db/tnsnames.ora-prod",
-		"/home/kristian/Work/polic/migrazione-2016/appunti.txt",
 		"/home/kristian/Work/polic/migrazione-2016/opensmtpd-conf.txt",
 		"/home/kristian/Work/nigu/20160919-sessioni-bloccate-partenza-cupweb.txt",
 		"/home/kristian/dev/companion/start-vpn.py",
@@ -251,7 +268,6 @@
 		"/home/kristian/dev/a/conf/legna.conf",
 		"/home/kristian/Work/nigu/migrazione-ACC-2013/MASTER-PLAN.TXT",
 		"/home/kristian/sandbox/dbatools/modules/OraDB.py",
-		"/home/kristian/.config/sublime-text-3/Packages/User/Anaconda.sublime-settings",
 		"/home/kristian/.config/sublime-text-3/Packages/User/SublimeLinter.sublime-settings",
 		"/home/kristian/Work/nigu/dba/tables/BDA3-FLUSSO_28SAN_LOMBARDIA_1.sql",
 		"/home/kristian/Work/nigu/dba/tables/CUP3-PREN_TESTA.sql",
@@ -327,12 +343,7 @@
 		"/home/kristian/Work/polic/migrazione-2016/20160219-conference.txt",
 		"/home/kristian/Work/nigu/migrazione-ACC-2016/TODO.txt",
 		"/home/kristian/Work/nigu/migrazione-AD-2012/terza-volta/tcpdump.txt",
-		"/home/kristian/Work/nigu/serverfarm-li/transazioni-http-cupweb-piu-pesanti.txt",
-		"/home/kristian/Work/nigu/serverfarm-li/indirizzi-ip-unici-accesso-cupnet-produzione.txt",
-		"/home/kristian/Work/nigu/migrazione-ACC-2016/accnew/datapump/appunti.txt",
-		"/home/kristian/Work/nigu/migrazione-ACC-2016/accnew/datapump/impdp-accnew.par",
-		"/home/kristian/Work/nigu/migrazione-ACC-2016/accnew/datapump/expdp-accnew.par",
-		"/home/kristian/Work/raf/sostituzione-storage/tempistiche.txt"
+		"/home/kristian/Work/nigu/serverfarm-li/transazioni-http-cupweb-piu-pesanti.txt"
 	],
 	"find":
 	{
@@ -373,6 +384,8 @@
 		"case_sensitive": false,
 		"find_history":
 		[
+			"interpreter",
+			"networks",
 			"@hi10 ",
 			"ddl",
 			"space",
@@ -498,9 +511,7 @@
 			"FLUSSO_",
 			"FLUSSO_REG",
 			"TRG_ID_DIA",
-			"DATA_INIZIO_VAL",
-			"DATAJ_FINE_VALIDITA_STP",
-			"sja"
+			"DATA_INIZIO_VAL"
 		],
 		"highlight": true,
 		"in_selection": false,
@@ -606,7 +617,7 @@
 		[
 			[
 				"",
-				"~/dev/a/companion.sublime-workspace"
+				"~/daily.sublime-project"
 			]
 		],
 		"width": 380.0
@@ -628,7 +639,7 @@
 	"show_open_files": true,
 	"show_tabs": true,
 	"side_bar_visible": true,
-	"side_bar_width": 331.0,
+	"side_bar_width": 282.0,
 	"status_bar_visible": true,
 	"template_settings":
 	{
