@@ -38,7 +38,7 @@ INSTALLED_APPS = (
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'rest_framework',
-    'servers'
+    'domino'
 )
 
 MIDDLEWARE_CLASSES = (
@@ -112,3 +112,7 @@ REST_FRAMEWORK = {
         'rest_framework.permissions.DjangoModelPermissionsOrAnonReadOnly'
     ]
 }
+
+FIXTURE_DIRS = (
+   '/usr/src/app/fixtures/',
+)

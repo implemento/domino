@@ -6,6 +6,10 @@
 </head>
 <body>
 <h1>First Test View</h1>
-Server ID: {{ server_id }}
+<ul>
+{% for server in servers %}
+    <li><a href="/domino/logon?server_id={{ server.id }}">{{ server.name }}</a></li>
+{% endfor %}
+</ul>
 </body>
 </html>

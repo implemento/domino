@@ -3,10 +3,32 @@
 	{
 		"selected_items":
 		[
+			[
+				"Http",
+				"HttpResponse\tclass"
+			]
 		]
 	},
 	"buffers":
 	[
+		{
+			"file": "app/domino/views.py",
+			"settings":
+			{
+				"buffer_size": 726,
+				"encoding": "UTF-8",
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "app/domino/urls.py",
+			"settings":
+			{
+				"buffer_size": 259,
+				"encoding": "UTF-8",
+				"line_ending": "Unix"
+			}
+		}
 	],
 	"build_system": "Anaconda Python Builder",
 	"build_system_choices":
@@ -212,12 +234,25 @@
 		"/home/kristian/dev/domino",
 		"/home/kristian/dev/domino/app",
 		"/home/kristian/dev/domino/app/app",
-		"/home/kristian/dev/domino/app/servers"
+		"/home/kristian/dev/domino/app/domino",
+		"/home/kristian/dev/domino/app/domino/templates",
+		"/home/kristian/dev/domino/doc"
 	],
 	"file_history":
 	[
-		"/home/kristian/dev/domino/app/servers/models.py",
+		"/home/kristian/dev/domino/app/domino/urls.py",
 		"/home/kristian/dev/domino/docker-compose.yml",
+		"/home/kristian/dev/domino/app/domino/views.py",
+		"/home/kristian/dev/domino/app/app/urls.py",
+		"/home/kristian/dev/domino/app/domino/templates/index.html",
+		"/home/kristian/dev/domino/app/domino/templates/webssh.html",
+		"/home/kristian/dev/domino/app/domino/models.py",
+		"/home/kristian/dev/bookcert/app/templates/lispa-vpn.html",
+		"/home/kristian/dev/bookcert/app/app.py",
+		"/home/kristian/dev/domino/app/app/settings.py",
+		"/home/kristian/dev/domino/app/domino/migrations/0002_auto_20161006_1232.py",
+		"/home/kristian/dev/domino/app/domino/apps.py",
+		"/home/kristian/dev/domino/app/servers/models.py",
 		"/home/kristian/.config/sublime-text-3/Packages/Anaconda/Anaconda.sublime-settings",
 		"/home/kristian/.config/sublime-text-3/Packages/User/Anaconda.sublime-settings",
 		"/home/kristian/.config/sublime-text-3/Packages/User/Python.sublime-settings",
@@ -332,18 +367,7 @@
 		"/mnt/sda3/sandbox/demo-san-matteo/db/impdp-cupv.par",
 		"/mnt/sda3/sandbox/demo-san-matteo/db/impdp-cup.par",
 		"/home/kristian/Work/mumed/20160705-deadlocks/appunti.txt",
-		"/home/kristian/Work/nigu/NIGC-password/intervento/hitech1-nigc-bin-files.txt",
-		"/home/kristian/Work/nigu/NIGC-password/intervento/hitech1-nigc-txt-files.txt",
-		"/home/kristian/Work/nigu/NIGC-password/intervento/hitech1-nigc-files.txt",
-		"/tmp/preview.txt",
-		"/home/kristian/Work/raf/migrazione-2016/appunti.txt",
-		"/home/kristian/Work/raf/sostituzione-storage/mente-locale.txt",
-		"/doc/Clienti/Multimedica/2016/Analisi/MigrazioneServer/appunti.txt",
-		"/doc/Clienti/Multimedica/2016/analisi/MigrazioneServer/Ambiente di test e collaudo:.txt",
-		"/home/kristian/Work/polic/migrazione-2016/20160219-conference.txt",
-		"/home/kristian/Work/nigu/migrazione-ACC-2016/TODO.txt",
-		"/home/kristian/Work/nigu/migrazione-AD-2012/terza-volta/tcpdump.txt",
-		"/home/kristian/Work/nigu/serverfarm-li/transazioni-http-cupweb-piu-pesanti.txt"
+		"/home/kristian/Work/nigu/NIGC-password/intervento/hitech1-nigc-bin-files.txt"
 	],
 	"find":
 	{
@@ -354,6 +378,7 @@
 		"height": 118.0,
 		"where_history":
 		[
+			"<project>",
 			"/home/kristian/sandbox/database/sql",
 			"/home/kristian/sandbox/database/sql/features/LOMBARDIA",
 			"/home/kristian/sandbox/database/sql/features/GP",
@@ -384,6 +409,13 @@
 		"case_sensitive": false,
 		"find_history":
 		[
+			"certs",
+			"servers",
+			"index.html",
+			"Routers",
+			"routers",
+			"DefaultRouter",
+			"router",
 			"interpreter",
 			"networks",
 			"@hi10 ",
@@ -504,14 +536,7 @@
 			"SEQ_IDRICHIESTA_16",
 			"FORMATTA_NOMI",
 			"TRG_ID_DIAGNOSI",
-			"MENUUTE",
-			"sto_",
-			"SEQ_ID_PAZ",
-			"GETCIVICO",
-			"FLUSSO_",
-			"FLUSSO_REG",
-			"TRG_ID_DIA",
-			"DATA_INIZIO_VAL"
+			"MENUUTE"
 		],
 		"highlight": true,
 		"in_selection": false,
@@ -545,14 +570,73 @@
 	"groups":
 	[
 		{
+			"selected": 1,
 			"sheets":
 			[
+				{
+					"buffer": 0,
+					"file": "app/domino/views.py",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 726,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								295,
+								295
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/Djaneiro/Syntaxes/Python Django.tmLanguage",
+							"tab_size": 4,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 1,
+					"type": "text"
+				},
+				{
+					"buffer": 1,
+					"file": "app/domino/urls.py",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 259,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								259,
+								259
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/Djaneiro/Syntaxes/Python Django.tmLanguage"
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 0,
+					"type": "text"
+				}
 			]
 		}
 	],
 	"incremental_find":
 	{
-		"height": 29.0
+		"height": 37.0
 	},
 	"input":
 	{

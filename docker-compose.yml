@@ -10,14 +10,14 @@ services:
         - "5432"
       ports:
         - "5432:5432"
-      networks:
-        - domino
+      network_mode: bridge
 
     as:
       build: ./app/
       environment:
         - PYTHONPATH=/usr/src/app
         - DJANGO_SETTINGS_MODULE=app.settings
+        - PYTHONUNBUFFERED=1
       volumes:
         - ./app:/usr/src/app
         - /var/run/docker.sock:/var/run/docker.sock
@@ -27,15 +27,6 @@ services:
         - "19360:19360" # for anaconda miniserver
       links:
         - db:db
-      networks:
-        - domino
+      network_mode: bridge
       working_dir: /usr/src/app
       command: python manage.py runserver 0.0.0.0:8000
-
-networks:
-    domino:
-      driver: bridge
-      ipam:
-        driver: default
-        config:
-          - subnet: 10.126.0.0/24
