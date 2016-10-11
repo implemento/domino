@@ -1,0 +1,7 @@
+{
+    "validate_imports": true,
+    "anaconda_linter_delay": 2,
+    "pep8_ignore": ["E501"],
+    "anaconda_linter_mark_style": "none",
+    "python_interpreter": "tcp://192.168.99.100:19360"
+}
