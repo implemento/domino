@@ -15,6 +15,8 @@ def sshlogon(request, server_id):
         # network
         pass
 
-    # spin up xtermjs container and attach it to private network
-
+    cli = Client(base_url='unix://var/run/docker.sock')
+    container = cli.create_container(image='xtermjs',
+                                     port_bindings={ 3000: [ 3001, 3002]}, detach=True)
+    print(container)
     return render(request, 'sshlogon.html', {"server": server})
