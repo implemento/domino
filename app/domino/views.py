@@ -10,13 +10,11 @@ def index(request):
 
 def sshlogon(request, server_id):
     server = Server.objects.get(pk=server_id)
-    # does it require vpn?
-
-    # spin up vpn (vpnc, openvpn) container with assigned private
-    # network
+    if server.vpn is not None:
+        # spin up vpn (vpnc, openvpn) container with assigned private
+        # network
+        pass
 
     # spin up xtermjs container and attach it to private network
 
-    # redirect user to xtermjs browser page
-    #servers = Server.objects.order_by('name')
     return render(request, 'sshlogon.html', {"server": server})

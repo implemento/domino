@@ -4,6 +4,46 @@
 		"selected_items":
 		[
 			[
+				"VPN",
+				"VirtualPrivateNetwork\t(models.py)"
+			],
+			[
+				"ser",
+				"server"
+			],
+			[
+				"NO",
+				"DO_NOTHING\tfunction"
+			],
+			[
+				"V",
+				"VirtualPrivateNetwork"
+			],
+			[
+				"C",
+				"CharField\tclass"
+			],
+			[
+				"de",
+				"default"
+			],
+			[
+				"max",
+				"max_length"
+			],
+			[
+				"mo",
+				"models\tmodule"
+			],
+			[
+				"imp",
+				"import"
+			],
+			[
+				"model",
+				"models"
+			],
+			[
 				"Http",
 				"HttpResponse\tclass"
 			]
@@ -11,24 +51,6 @@
 	},
 	"buffers":
 	[
-		{
-			"file": "app/domino/views.py",
-			"settings":
-			{
-				"buffer_size": 726,
-				"encoding": "UTF-8",
-				"line_ending": "Unix"
-			}
-		},
-		{
-			"file": "app/domino/urls.py",
-			"settings":
-			{
-				"buffer_size": 259,
-				"encoding": "UTF-8",
-				"line_ending": "Unix"
-			}
-		}
 	],
 	"build_system": "Anaconda Python Builder",
 	"build_system_choices":
@@ -210,7 +232,7 @@
 				"File: Close All"
 			]
 		],
-		"width": 485.0
+		"width": 449.0
 	},
 	"console":
 	{
@@ -240,13 +262,17 @@
 	],
 	"file_history":
 	[
-		"/home/kristian/dev/domino/app/domino/urls.py",
-		"/home/kristian/dev/domino/docker-compose.yml",
 		"/home/kristian/dev/domino/app/domino/views.py",
+		"/home/kristian/dev/domino/app/domino/admin.py",
+		"/home/kristian/dev/domino/app/domino/templates/sshlogon.html",
+		"/home/kristian/dev/domino/app/domino/models.py",
+		"/home/kristian/dev/domino/app/domino/urls.py",
+		"/home/kristian/.config/sublime-text-3/Packages/User/Python Django.sublime-settings",
+		"/home/kristian/.config/sublime-text-3/Packages/User/Anaconda.sublime-settings",
+		"/home/kristian/dev/domino/docker-compose.yml",
 		"/home/kristian/dev/domino/app/app/urls.py",
 		"/home/kristian/dev/domino/app/domino/templates/index.html",
 		"/home/kristian/dev/domino/app/domino/templates/webssh.html",
-		"/home/kristian/dev/domino/app/domino/models.py",
 		"/home/kristian/dev/bookcert/app/templates/lispa-vpn.html",
 		"/home/kristian/dev/bookcert/app/app.py",
 		"/home/kristian/dev/domino/app/app/settings.py",
@@ -254,7 +280,6 @@
 		"/home/kristian/dev/domino/app/domino/apps.py",
 		"/home/kristian/dev/domino/app/servers/models.py",
 		"/home/kristian/.config/sublime-text-3/Packages/Anaconda/Anaconda.sublime-settings",
-		"/home/kristian/.config/sublime-text-3/Packages/User/Anaconda.sublime-settings",
 		"/home/kristian/.config/sublime-text-3/Packages/User/Python.sublime-settings",
 		"/home/kristian/dev/domino/app/requirements.txt",
 		"/home/kristian/Work/polic/migrazione-2016/appunti.txt",
@@ -364,10 +389,7 @@
 		"/home/kristian/Work/polic/migrazione-2016/specifiche-per-nuovo-cluster-oracle-12c-rac.txt",
 		"/home/kristian/Work/nigu/20160708-user-QPRC-hungry-select.txt",
 		"/mnt/sda3/sandbox/demo-san-matteo/db/impdp-sis.par",
-		"/mnt/sda3/sandbox/demo-san-matteo/db/impdp-cupv.par",
-		"/mnt/sda3/sandbox/demo-san-matteo/db/impdp-cup.par",
-		"/home/kristian/Work/mumed/20160705-deadlocks/appunti.txt",
-		"/home/kristian/Work/nigu/NIGC-password/intervento/hitech1-nigc-bin-files.txt"
+		"/mnt/sda3/sandbox/demo-san-matteo/db/impdp-cupv.par"
 	],
 	"find":
 	{
@@ -570,67 +592,8 @@
 	"groups":
 	[
 		{
-			"selected": 1,
 			"sheets":
 			[
-				{
-					"buffer": 0,
-					"file": "app/domino/views.py",
-					"semi_transient": false,
-					"settings":
-					{
-						"buffer_size": 726,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								295,
-								295
-							]
-						],
-						"settings":
-						{
-							"syntax": "Packages/Djaneiro/Syntaxes/Python Django.tmLanguage",
-							"tab_size": 4,
-							"translate_tabs_to_spaces": true
-						},
-						"translation.x": 0.0,
-						"translation.y": 0.0,
-						"zoom_level": 1.0
-					},
-					"stack_index": 1,
-					"type": "text"
-				},
-				{
-					"buffer": 1,
-					"file": "app/domino/urls.py",
-					"semi_transient": false,
-					"settings":
-					{
-						"buffer_size": 259,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								259,
-								259
-							]
-						],
-						"settings":
-						{
-							"syntax": "Packages/Djaneiro/Syntaxes/Python Django.tmLanguage"
-						},
-						"translation.x": 0.0,
-						"translation.y": 0.0,
-						"zoom_level": 1.0
-					},
-					"stack_index": 0,
-					"type": "text"
-				}
 			]
 		}
 	],
