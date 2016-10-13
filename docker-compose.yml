@@ -30,3 +30,6 @@ services:
       network_mode: bridge
       working_dir: /usr/src/app
       command: python manage.py runserver 0.0.0.0:8000
+
+    xtermjs:
+      image: implemento/xtermjs
