@@ -31,5 +31,11 @@ services:
       working_dir: /usr/src/app
       command: python manage.py runserver 0.0.0.0:8000
 
+    vpn:
+      image: implemento/vpn
+
     xtermjs:
       image: implemento/xtermjs
+
+    firefox:
+      image: implemento/firefox

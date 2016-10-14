@@ -1,0 +1,6 @@
+docker run --name customer-vpn --rm --privileged -v `pwd`:/config:ro implemento/vpn vpnc --no-detach /config/customer.conf
+docker run --name customer-vpn --rm --privileged -v `pwd`:/config:ro implemento/vpn openvpn /config/customer.conf
+
+docker run --rm --net container:customer-vpn implemento/xtermjs npm start
+
+docker run -d --name firefox -e DISPLAY=$DISPLAY -v /tmp/.X11-unix:/tmp/.X11-unix implemento/firefox firefox
