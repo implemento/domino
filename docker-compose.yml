@@ -36,6 +36,3 @@ services:
 
     xtermjs:
       image: implemento/xtermjs
-
-    firefox:
-      image: implemento/firefox

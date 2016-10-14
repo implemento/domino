@@ -17,7 +17,11 @@ def sshlogon(request, server_id):
         pass
     cli = Client(base_url='unix://var/run/docker.sock')
     container = cli.create_container(image='xtermjs', detach=True,
-                                     host_config=cli.create_host_config(port_bindings={3000: 3000}),
+                                     host_config=cli.create_host_config(port_bindings={3000: 3000},
+                                         binds={'/var/run/docker.sock': {
+                                           'bind': '/var/run/docker.sock',
+                                           'mode': 'rw'}
+                                         }),
                                      command='npm start')
     response = cli.start(container=container.get('Id'))
     print(response)
