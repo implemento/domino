@@ -2,41 +2,59 @@ var term,
     protocol,
     socketURL,
     socket,
-    pid;
+    pid,
+    charWidth,
+    charHeight;
 
-var cols = 80,
-    rows = 40;
+var terminalContainer = document.getElementById('terminal-container'),
+    optionElements = {
+      cursorBlink: document.querySelector('#option-cursor-blink')
+    },
+    colsElement = document.getElementById('cols'),
+    rowsElement = document.getElementById('rows');
 
-var width = cols.toString() + 'px',
-    height = rows.toString() + 'px';
+function setTerminalSize () {
+  var cols = parseInt(colsElement.value),
+      rows = parseInt(rowsElement.value),
+      width = (cols * charWidth).toString() + 'px',
+      height = (rows * charHeight).toString() + 'px';
 
-var terminalContainer = document.getElementById('terminal-container')
-terminalContainer.style.width = width;
-terminalContainer.style.height = height;
-
-// Clean terminal
-while (terminalContainer.children.length) {
-    terminalContainer.removeChild(terminalContainer.children[0]);
+  terminalContainer.style.width = width;
+  terminalContainer.style.height = height;
+  term.resize(cols, rows);
 }
 
-term = new Terminal();
-term.on('resize', function (size) {
-  if (!pid) {
-    return;
+colsElement.addEventListener('change', setTerminalSize);
+rowsElement.addEventListener('change', setTerminalSize);
+
+optionElements.cursorBlink.addEventListener('change', createTerminal);
+
+createTerminal();
+
+function createTerminal() {
+  // Clean terminal
+  while (terminalContainer.children.length) {
+    terminalContainer.removeChild(terminalContainer.children[0]);
   }
-  var cols = size.cols,
-      rows = size.rows,
-      url = '/terminals/' + pid + '/size?cols=' + cols + '&rows=' + rows;
-  fetch(url, {method: 'POST'});
-});
+  term = new Terminal({
+    cursorBlink: optionElements.cursorBlink.checked
+  });
+  term.on('resize', function (size) {
+    if (!pid) {
+      return;
+    }
+    var cols = size.cols,
+        rows = size.rows,
+        url = '/terminals/' + pid + '/size?cols=' + cols + '&rows=' + rows;
 
-protocol = (location.protocol === 'https:') ? 'wss://' : 'ws://';
-socketURL = protocol + location.hostname + ((location.port) ? (':' + location.port) : '') + '/terminals/';
+    fetch(url, {method: 'POST'});
+  });
+  protocol = (location.protocol === 'https:') ? 'wss://' : 'ws://';
+  socketURL = protocol + location.hostname + ((location.port) ? (':' + location.port) : '') + '/terminals/';
 
-term.open(terminalContainer);
-term.fit();
+  term.open(terminalContainer);
+  term.fit();
 
-/*
   var initialGeometry = term.proposeGeometry(),
       cols = initialGeometry.cols,
       rows = initialGeometry.rows;
@@ -57,6 +75,7 @@ term.fit();
       socket.onclose = runFakeTerminal;
       socket.onerror = runFakeTerminal;
     });
+    term.writeln("ssh prova");
   });
 }
 
@@ -106,4 +125,3 @@ function runFakeTerminal() {
     term.write(data);
   });
 }
-*/
