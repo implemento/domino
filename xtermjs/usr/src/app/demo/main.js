@@ -2,59 +2,41 @@ var term,
     protocol,
     socketURL,
     socket,
-    pid,
-    charWidth,
-    charHeight;
+    pid;
 
-var terminalContainer = document.getElementById('terminal-container'),
-    optionElements = {
-      cursorBlink: document.querySelector('#option-cursor-blink')
-    },
-    colsElement = document.getElementById('cols'),
-    rowsElement = document.getElementById('rows');
+var cols = 80,
+    rows = 40;
 
-function setTerminalSize () {
-  var cols = parseInt(colsElement.value),
-      rows = parseInt(rowsElement.value),
-      width = (cols * charWidth).toString() + 'px',
-      height = (rows * charHeight).toString() + 'px';
+var width = cols.toString() + 'px',
+    height = rows.toString() + 'px';
 
-  terminalContainer.style.width = width;
-  terminalContainer.style.height = height;
-  term.resize(cols, rows);
+var terminalContainer = document.getElementById('terminal-container')
+terminalContainer.style.width = width;
+terminalContainer.style.height = height;
+
+// Clean terminal
+while (terminalContainer.children.length) {
+    terminalContainer.removeChild(terminalContainer.children[0]);
 }
 
-colsElement.addEventListener('change', setTerminalSize);
-rowsElement.addEventListener('change', setTerminalSize);
-
-optionElements.cursorBlink.addEventListener('change', createTerminal);
-
-createTerminal();
-
-function createTerminal() {
-  // Clean terminal
-  while (terminalContainer.children.length) {
-    terminalContainer.removeChild(terminalContainer.children[0]);
+term = new Terminal();
+term.on('resize', function (size) {
+  if (!pid) {
+    return;
   }
-  term = new Terminal({
-    cursorBlink: optionElements.cursorBlink.checked
-  });
-  term.on('resize', function (size) {
-    if (!pid) {
-      return;
-    }
-    var cols = size.cols,
-        rows = size.rows,
-        url = '/terminals/' + pid + '/size?cols=' + cols + '&rows=' + rows;
+  var cols = size.cols,
+      rows = size.rows,
+      url = '/terminals/' + pid + '/size?cols=' + cols + '&rows=' + rows;
+  fetch(url, {method: 'POST'});
+});
 
-    fetch(url, {method: 'POST'});
-  });
-  protocol = (location.protocol === 'https:') ? 'wss://' : 'ws://';
-  socketURL = protocol + location.hostname + ((location.port) ? (':' + location.port) : '') + '/terminals/';
+protocol = (location.protocol === 'https:') ? 'wss://' : 'ws://';
+socketURL = protocol + location.hostname + ((location.port) ? (':' + location.port) : '') + '/terminals/';
 
-  term.open(terminalContainer);
-  term.fit();
+term.open(terminalContainer);
+term.fit();
 
+/*
   var initialGeometry = term.proposeGeometry(),
       cols = initialGeometry.cols,
       rows = initialGeometry.rows;
@@ -124,3 +106,4 @@ function runFakeTerminal() {
     term.write(data);
   });
 }
+*/
