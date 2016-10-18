@@ -75,7 +75,6 @@ function createTerminal() {
       socket.onclose = runFakeTerminal;
       socket.onerror = runFakeTerminal;
     });
-    term.writeln("ssh prova");
   });
 }
 
@@ -83,6 +82,7 @@ function createTerminal() {
 function runRealTerminal() {
   term.attach(socket);
   term._initialized = true;
+  term.socket.send("docker exec -it cocky_goldwasser ssh server\r");
 }
 
 function runFakeTerminal() {
