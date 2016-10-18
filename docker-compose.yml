@@ -41,5 +41,6 @@ services:
       network_mode: bridge
       volumes:
         - ./xtermjs/usr/src/app/demo:/usr/src/app/demo:ro
+        - /var/run/docker.sock:/var/run/docker.sock
       command: npm start
 
