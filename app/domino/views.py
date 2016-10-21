@@ -1,7 +1,10 @@
 from django.shortcuts import render
 from django.http import HttpResponse
+from django.views.generic.base import RedirectView
 from .models import Server
 from docker import Client
+import tempfile
+import os
 
 
 def index(request):
@@ -9,31 +12,47 @@ def index(request):
     return render(request, 'index.html', {"servers": servers})
 
 
-def sshlogon(request, server_id):
-    server = Server.objects.get(pk=server_id)
-    if server.vpn is not None:
-        #
-        # spin up vpn (vpnc, openvpn) container with assigned private
-        # network
-        pass
+class OpenTerminalRedirectView(RedirectView):
 
-    create_vpn_container(server)
+    permanent = False
+    query_string = True
+    pattern_name = 'sshlogon'
 
-    return render(request, 'sshlogon.html', {"server": server})
+    def create_vpn_container(self, server):
+        vpn_conf_file_name = create_vpn_config_file(server)
+        vpn_command = server.customer.vpn.vpn_type.command
 
-def create_vpn_container(server):
-    vpn = server.vpn
+        cli = Client(base_url='unix://var/run/docker.sock')
+        container = cli.create_container(
+            image='implemento/vpn', detach=True,
+            host_config=cli.create_host_config(
+                port_bindings={3000: 3000},
+                binds={'/var/run/docker.sock': {
+                            'bind': '/var/run/docker.sock',
+                            'mode': 'rw'},
+                       '/tmp/' + vpn_conf_file_name: {
+                            'bind': '/config/vpn.conf',
+                            'mode': 'ro'}
+                      }),
+            command=vpn_command)
+        response = cli.start(container=container.get('Id'))
 
-    cli = Client(base_url='unix://var/run/docker.sock')
-    container = cli.create_container(
-        image='implemento/vpn', detach=True,
-        host_config=cli.create_host_config(
-            port_bindings={3000: 3000},
-            binds={'/var/run/docker.sock': {
-                'bind': '/var/run/docker.sock',
-                'mode': 'rw'
-            }
-        }),
-        command='')
+    def create_vpn_config_file(self, server):
+        fp = tempfile.NamedTemporaryFile()
+        fp.write(server.customer.vpn.conf_file)
 
-    response = cli.start(container=container.get('Id'))
+        return os.path.basename(fp.name)
+
+    def get_redirect_url(self, *args, **kwargs):
+        server = Server.objects.get(pk=kwargs['server_id'])
+        if server.customer.vpn is not None:
+            #
+            # spin up vpn (vpnc, openvpn) container with assigned private
+            # network
+            pass
+
+        self.create_vpn_container(server)
+
+        return super(OpenTerminalRedirectView, self).get_redirect_url(*args, **kwargs)
+
+
