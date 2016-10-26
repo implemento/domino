@@ -14,34 +14,38 @@ def index(request):
 
 class OpenTerminalRedirectView(RedirectView):
 
-    permanent = False
-    query_string = True
-    pattern_name = 'sshlogon'
+    #permanent = False
+    #query_string = True
+    #pattern_name = 'sshlogon'
+
+    def create_vpn_config_file(self, server):
+        fp = tempfile.NamedTemporaryFile(prefix="/config/", delete=False)
+
+        fp.write(server.customer.vpn.conf_file.encode("utf8"))
+        fp.flush()
+
+        print(fp.name)
+
+        #return os.path.basename(fp.name)
+        return fp.name
 
     def create_vpn_container(self, server):
-        vpn_conf_file_name = create_vpn_config_file(server)
+        vpn_conf_file = self.create_vpn_config_file(server)
         vpn_command = server.customer.vpn.vpn_type.command
 
         cli = Client(base_url='unix://var/run/docker.sock')
         container = cli.create_container(
-            image='implemento/vpn', detach=True,
+            image='implemento/vpn',
+            detach=True,
+            volumes=['domino_config:/config'],
             host_config=cli.create_host_config(
                 port_bindings={3000: 3000},
                 binds={'/var/run/docker.sock': {
                             'bind': '/var/run/docker.sock',
                             'mode': 'rw'},
-                       '/tmp/' + vpn_conf_file_name: {
-                            'bind': '/config/vpn.conf',
-                            'mode': 'ro'}
                       }),
-            command=vpn_command)
+            command=vpn_command +  ' ' + vpn_conf_file)
         response = cli.start(container=container.get('Id'))
-
-    def create_vpn_config_file(self, server):
-        fp = tempfile.NamedTemporaryFile()
-        fp.write(server.customer.vpn.conf_file)
-
-        return os.path.basename(fp.name)
 
     def get_redirect_url(self, *args, **kwargs):
         server = Server.objects.get(pk=kwargs['server_id'])
@@ -54,5 +58,3 @@ class OpenTerminalRedirectView(RedirectView):
         self.create_vpn_container(server)
 
         return super(OpenTerminalRedirectView, self).get_redirect_url(*args, **kwargs)
-
-

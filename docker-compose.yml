@@ -22,6 +22,7 @@ services:
         - ./app:/usr/src/app
         - /var/run/docker.sock:/var/run/docker.sock
         - ~/.config/sublime-text-3/Packages/Anaconda:/opt/anaconda
+        - config:/config
       ports:
         - "80:8000"
         - "19360:19360" # for anaconda miniserver
@@ -33,6 +34,7 @@ services:
 
     vpn:
       image: implemento/vpn
+      network_mode: bridge
 
     xtermjs:
       image: implemento/xtermjs
@@ -42,5 +44,11 @@ services:
       volumes:
         - ./xtermjs/usr/src/app/demo:/usr/src/app/demo:ro
         - /var/run/docker.sock:/var/run/docker.sock
+        - config:/config
       command: npm start
+
+
+volumes:
+  config:
+    external: false
 
