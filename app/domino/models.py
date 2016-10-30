@@ -15,6 +15,7 @@ class VPN(models.Model):
     #implement type of the VPN
     name = models.CharField(max_length=100, default='')
     conf_file = models.TextField(null=True, blank=False)
+    container_name = models.CharField(max_length=400, default='')
     vpn_type = models.ForeignKey(
         VPNType,
         on_delete=models.PROTECT,
