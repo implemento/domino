@@ -3,7 +3,7 @@ from django.http import HttpResponse
 from django.views.generic.base import RedirectView
 from .models import Server
 from docker import Client
-import tempfile
+from . import generate_xtermjs_command_file
 
 
 def index(request):
@@ -13,10 +13,10 @@ def index(request):
 
 class OpenTerminalRedirectView(RedirectView):
 
+    xtermjs_start_port = 3000
+    xtermjs_current_port = xtermjs_start_port
+
     cli = Client(base_url='unix://var/run/docker.sock')
-    #permanent = False
-    #query_string = True
-    #pattern_name = 'sshlogon'
 
     def create_vpn_config_file(self, server):
         fp = open('/config/'+server.customer.vpn.container_name+'.conf', mode='w', encoding='utf8')
@@ -25,6 +25,34 @@ class OpenTerminalRedirectView(RedirectView):
         fp.close()
 
         return fp.name
+
+    def create_host_config_vpn(self):
+        host_config = self.cli.create_host_config(
+            port_bindings={3000: 3000},
+            privileged=True,
+            binds={'/var/run/docker.sock': {
+                        'bind': '/var/run/docker.sock',
+                        'mode': 'rw'},
+                   'domino_config': {
+                        'bind': '/config',
+                        'mode': 'ro'},
+                  })
+
+        return host_config
+
+    def create_host_config_xtermjs(self, xtermjs_config_file):
+        host_config = self.cli.create_host_config(
+            port_bindings={3000: 3000},
+            privileged=True,
+            binds={'/var/run/docker.sock': {
+                        'bind': '/var/run/docker.sock',
+                        'mode': 'rw'},
+                   'domino_config': {
+                        'bind': xtermjs_config_file,
+                        'mode': 'ro'}
+                  })
+
+        return host_config
 
     def create_vpn_container(self, server):
         vpn_conf_file = self.create_vpn_config_file(server)
@@ -43,17 +71,9 @@ class OpenTerminalRedirectView(RedirectView):
             image='implemento/vpn',
             detach=True,
             name=vpn_container_name,
-            volumes=['domino_config:/config'],
-            host_config=self.cli.create_host_config(
-                port_bindings={3000: 3000},
-                binds={'/var/run/docker.sock': {
-                            'bind': '/var/run/docker.sock',
-                            'mode': 'rw'},
-                      }),
-            command="vpnc --no-detach /config/mumed_vpn.conf")
-            #command=vpn_command + ' ' + vpn_conf_file)
-
-        print(vpn_command + ' ' + vpn_conf_file)
+            volumes=['/config'],
+            host_config=self.create_host_config_vpn(),
+            command=vpn_command + ' ' + vpn_conf_file)
 
         self.cli.start(container=vpn_container.get('Id'))
 
@@ -64,10 +84,23 @@ class OpenTerminalRedirectView(RedirectView):
 
         return None
 
+    def create_xtermjs_container(self, server):
+        xtermjs_container = self.cli.create_container(
+            image='implemento/xtermjs',
+            detach=True,
+            name='xtermjs_port' + str(self.xtermjs_current_port),
+            volumes=['/config/command_file.js'],
+            host_config=self.create_host_config_xtermjs(generate_xtermjs_command_file()),
+            command='npm start'
+        )
+
+        self.cli.start(container=xtermjs_container.get('Id'))
 
     def get_redirect_url(self, *args, **kwargs):
         server = Server.objects.get(pk=kwargs['server_id'])
         if server.customer.vpn is not None:
             self.create_vpn_container(server)
+
+        self.create_xtermjs_container(server)
 
         return super(OpenTerminalRedirectView, self).get_redirect_url(*args, **kwargs)

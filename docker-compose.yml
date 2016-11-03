@@ -38,14 +38,13 @@ services:
 
     xtermjs:
       image: implemento/xtermjs
-      ports:
-        - "3000:3000"
+      #ports:
+      #  - "3000:3000"
       network_mode: bridge
       volumes:
         - ./xtermjs/usr/src/app/demo:/usr/src/app/demo:ro
         - /var/run/docker.sock:/var/run/docker.sock
-        - config:/config
-      command: npm start
+      #command: npm start
 
 
 volumes:
