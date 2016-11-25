@@ -4,6 +4,7 @@ from django.views.generic.base import RedirectView
 from .models import Server
 from docker import Client
 from . import generate_xtermjs_command_file
+from .docker import Docker
 
 
 def index(request):
@@ -48,7 +49,7 @@ class OpenTerminalRedirectView(RedirectView):
                         'bind': '/var/run/docker.sock',
                         'mode': 'rw'},
                    'domino_config': {
-                        'bind': xtermjs_config_file,
+                        'bind': '/config',
                         'mode': 'ro'}
                   })
 
@@ -85,16 +86,21 @@ class OpenTerminalRedirectView(RedirectView):
         return None
 
     def create_xtermjs_container(self, server):
+        container_name = 'xtermjs_port' + str(self.xtermjs_current_port)
+        xtermjs_config_file = generate_xtermjs_command_file.generate_xtermjs_command_file(server, container_name)
+
         xtermjs_container = self.cli.create_container(
             image='implemento/xtermjs',
             detach=True,
-            name='xtermjs_port' + str(self.xtermjs_current_port),
-            volumes=['/config/command_file.js'],
-            host_config=self.create_host_config_xtermjs(generate_xtermjs_command_file()),
+            name=container_name,
+            volumes=['/config'],
+            host_config=self.create_host_config_xtermjs(xtermjs_config_file),
             command='npm start'
         )
 
         self.cli.start(container=xtermjs_container.get('Id'))
+        Docker.copy(None, xtermjs_config_file, '/config/command_file.js', container_name);
+
 
     def get_redirect_url(self, *args, **kwargs):
         server = Server.objects.get(pk=kwargs['server_id'])
